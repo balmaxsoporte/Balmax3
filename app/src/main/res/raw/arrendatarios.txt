@@ -1,3 +1,0 @@
-Patio 1,Puesto 1,Camión,AA1122,Rampla,BB1122,ING S.A.
-Patio 1,Puesto 2,Camión,CC3344,Termo,DD3344,SPATECH
-Patio 1,Puesto 3,Auto,EE5566,,,""
