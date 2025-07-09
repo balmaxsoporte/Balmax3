@@ -3,9 +3,8 @@ package com.example.patiobalmax.database.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "usuario")
-data class Usuario(
-    @PrimaryKey val nombre: String,
-    val contrasena: String,
-    val permisos: String
+@Entity(tableName = "patio")
+data class Patio(
+    @PrimaryKey val numero: Int,
+    val nombre: String
 )
