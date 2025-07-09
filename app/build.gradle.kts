@@ -13,6 +13,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -28,7 +30,11 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = libs.versions.target.get()
+        jvmTarget = "11"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -36,4 +42,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.coreKtx)
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
 }
