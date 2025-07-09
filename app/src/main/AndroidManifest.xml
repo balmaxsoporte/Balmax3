@@ -3,6 +3,7 @@
     package="com.example.patiobalmax">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:label="PatioBalmax"
         android:theme="@style/AppTheme">
