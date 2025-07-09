@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PatioBalmax</string>
+    <string name="titulo_login">Login Estacionamiento</string>
+    <string name="mensaje_bienvenida">Bienvenido</string>
+    <string name="boton_iniciar_sesion">Iniciar Sesión</string>
+    <string name="titulo_mapa">Mapa del Estacionamiento</string>
+    <string name="titulo_patio">Detalles del Patio</string>
+    <string name="editar_puesto">Editar Puesto</string>
+    <string name="admin_usuarios">Administrar Usuarios</string>
+    <string name="placeholder_usuario">Ingrese usuario</string>
+    <string name="placeholder_contrasena">Ingrese contraseña</string>
+    <string name="estado_libre">Libre</string>
+    <string name="estado_arrendatario">Ocupado - Arrendatario</string>
+    <string name="estado_particular">Ocupado - Particular</string>
+</resources>
