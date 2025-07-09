@@ -1,10 +1,4 @@
-// build.gradle.kts (Project-level)
 plugins {
-    id("com.android.application") version "8.11.0" apply false
-    id("org.jetbrains.kotlin.android") version "2.2.0" apply false
-}
-
-repositories {
-    google()
-    mavenCentral()
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
 }
