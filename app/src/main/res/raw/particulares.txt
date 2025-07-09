@@ -1,0 +1,3 @@
+Patio 1,Puesto 4,Camión,FF7788,Rampla,GG7788
+Patio 1,Puesto 5,Auto,HH9900,,,
+Patio 1,Puesto 6,Camioneta,JJ1122,,,
