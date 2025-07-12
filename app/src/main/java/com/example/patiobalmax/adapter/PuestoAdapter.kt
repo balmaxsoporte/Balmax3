@@ -8,19 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.patiobalmax.R
 import com.example.patiobalmax.model.EstadoPuesto
-import com.example.patiobalmax.util.Constants
-import com.example.patiobalmax.ui.NavigationManager
 
-class PuestoAdapter(private val puestos: List<EstadoPuesto>) :
-    RecyclerView.Adapter<PuestoAdapter.ViewHolder>() {
+class PuestoAdapter(
+    private val puestos: List<EstadoPuesto>,
+    private val onItemClickListener: ((EstadoPuesto) -> Unit)? = null
+) : RecyclerView.Adapter<PuestoAdapter.PuestoViewHolder>() {
 
-    private var onItemClickListener: ((EstadoPuesto) -> Unit)? = null
-
-    fun setOnItemClickListener(listener: (EstadoPuesto) -> Unit) {
-        onItemClickListener = listener
-    }
-
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class PuestoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textPuesto: TextView = itemView.findViewById(R.id.textPuesto)
         val textEstado: TextView = itemView.findViewById(R.id.textEstado)
         val textArrendatario: TextView = itemView.findViewById(R.id.textArrendatario)
@@ -28,27 +22,32 @@ class PuestoAdapter(private val puestos: List<EstadoPuesto>) :
         val iconoAccion: ImageView = itemView.findViewById(R.id.iconoAccion)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PuestoViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_puesto, parent, false)
-        return ViewHolder(view)
+        return PuestoViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PuestoViewHolder, position: Int) {
         val puesto = puestos[position]
 
+        // Mostrar número de puesto
         holder.textPuesto.text = "Puesto ${puesto.numero}"
-        holder.textEstado.text = when (puesto.estado) {
-            "Arrendatario" -> "Ocupado - Arrendatario"
-            "Particular" -> "Ocupado - Particular"
-            else -> "Libre"
+
+        // Mostrar tipo de lugar1
+        holder.textEstado.text = when (puesto.tipoLugar1) {
+            "Auto", "Camioneta", "Van" -> "Libre"
+            "Camion", "Maquinaria Pesada" -> "Libre"
+            else -> "Ocupado - ${puesto.estado}"
         }
 
-        holder.textArrendatario.text = when (puesto.estado) {
-            "Arrendatario" -> "ING"
-            "Particular" -> ""
-            else -> ""
+        // Mostrar nombre de arrendatario si corresponde
+        holder.textArrendatario.text = if (puesto.estado == "Arrendatario" && !puesto.patenteLugar1.isNullOrEmpty()) {
+            puesto.patenteLugar1
+        } else {
+            ""
         }
 
+        // Establecer icono del vehículo
         holder.iconoVehiculo.setImageResource(
             when (puesto.tipoLugar1) {
                 "Auto", "Camioneta", "Van" -> R.drawable.icono_auto
@@ -57,6 +56,7 @@ class PuestoAdapter(private val puestos: List<EstadoPuesto>) :
             }
         )
 
+        // Cambiar color de fondo según estado
         holder.itemView.setBackgroundColor(
             when (puesto.estado) {
                 "Arrendatario" -> R.color.green
@@ -65,6 +65,7 @@ class PuestoAdapter(private val puestos: List<EstadoPuesto>) :
             }
         )
 
+        // Configurar acción al hacer clic
         holder.itemView.setOnClickListener {
             onItemClickListener?.invoke(puesto)
         }
