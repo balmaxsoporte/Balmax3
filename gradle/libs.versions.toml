@@ -1,7 +1,7 @@
 [versions]
 agp = "8.3.0"
 kotlin = "2.0.21"
-
+room = "2.6.1"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -16,6 +16,8 @@ jvmTarget = "11"
 [libraries]
 android-application = { module = "com.android.application", version.ref = "agp" }
 kotlin-android = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+roomRuntime = { module = "androidx.room:room-runtime", version.ref = "room" }
+roomCompiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
