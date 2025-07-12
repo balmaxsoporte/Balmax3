@@ -5,4 +5,9 @@ object Constants {
     const val EXTRA_USUARIO = "usuario"
     const val EXTRA_PERMISOS = "permisos"
     const val EXTRA_PATIO = "patio"
+    const val EXTRA_PUESTO_NUMERO = "puesto_numero"
+    const val EXTRA_LUGAR_1 = "lugar1"
+    const val EXTRA_PATENTE_LUGAR_1 = "patente_lugar1"
+    const val EXTRA_LUGAR_2 = "lugar2"
+    const val EXTRA_PATENTE_LUGAR_2 = "patente_lugar2"
 }
