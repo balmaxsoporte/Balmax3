@@ -13,4 +13,5 @@ object Constants {
     const val EXTRA_USUARIO_NOMBRE = "usuario_nombre"
     const val EXTRA_USUARIO_CONTRASENA = "usuario_contrasena"
     const val EXTRA_USUARIO_PERMISOS = "usuario_permisos"
+    const val EXTRA_ARCHIVOS_RECIENTES = "archivos_recientes"
 }
