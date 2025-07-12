@@ -48,6 +48,7 @@
         android:id="@+id/iconoAccion"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:src="@drawable/icono_edit"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="16dp"
         android:visibility="gone"/>
