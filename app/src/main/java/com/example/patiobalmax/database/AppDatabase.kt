@@ -12,32 +12,27 @@ import com.example.patiobalmax.database.entity.Usuario
 @Database(entities = [Usuario::class, Puesto::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
-    // Acceso a los DAOs
     abstract fun usuarioDao(): UsuarioDao
     abstract fun puestoDao(): PuestoDao
 
     companion object {
         // Nombre de la base de datos
-        private const val DATABASE_NAME = "patiobalmax.db"
+        private const.val DATABASE_NAME = "patiobalmax.db"
 
-        // Singleton para evitar múltiples instancias de la BD
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        // Obtiene la instancia única de la base de datos
-        fun getDatabase(context: Context): AppDatabase =
-            INSTANCE ?: synchronized(this) {
-                INSTANCE ?: buildDatabase(context).also { instance ->
-                    INSTANCE = instance
-                }
-            }
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    DATABASE_NAME
+                ).build()
 
-        // Construye la base de datos usando Room
-        private fun buildDatabase(appContext: Context) =
-            Room.databaseBuilder(
-                appContext.applicationContext,
-                AppDatabase::class.java,
-                DATABASE_NAME
-            ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
     }
 }
