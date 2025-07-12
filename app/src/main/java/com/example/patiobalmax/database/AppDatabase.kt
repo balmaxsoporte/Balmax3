@@ -8,4 +8,22 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
     abstract fun patioDao(): PatioDao
     abstract fun puestoDao(): PuestoDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "patiobalmax.db"
+                ).build()
+
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
 }
