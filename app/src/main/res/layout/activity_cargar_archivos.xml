@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textTituloCarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Archivos de Registro"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnSeleccionarArchivoArrendatarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar archivo de Arrendatarios (.txt)"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnSeleccionarArchivoParticulares"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar archivo de Particulares (.txt)"
+        android:layout_marginBottom="8dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarCarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textMensajeConfirmacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#00FF00"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
