@@ -1,8 +1,10 @@
 <resources>
-    <color name="green">#FF4CAF50</color>
-    <color name="blue">#2196F3</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="gray">#E0E0E0</color>
-    <color name="red">#FF0000</color>
+    <color name="green">#FF4CAF50</color> <!-- Verde para arrendatarios -->
+    <color name="blue">#2196F3</color> <!-- Azul para particulares -->
+    <color name="white">#FFFFFF</color> <!-- Fondo blanco -->
+    <color name="black">#000000</color> <!-- Texto negro -->
+    <color name="gray">#E0E0E0</color> <!-- Fondo gris para filas vacías -->
+    <color name="red">#FF0000</color> <!-- Rojo para errores -->
+    <color name="green_dark">#2E7D32</color> <!-- Verde oscuro para texto -->
+    <color name="blue_dark">#1565C0</color> <!-- Azul oscuro para texto -->
 </resources>
